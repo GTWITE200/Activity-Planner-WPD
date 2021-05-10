@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     {{>partials/header}}
+</head>
+
+<body class="container">
+    <h1>{{title}}</h1>
+
+    {{> partials/buttons}}
+
+    {{#entries}}
+    <div class="card" data-id="{{id}}">
+        <div class="card-header">
+            {{subject}}
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                {{contents}}
+            </div>
+            <div class="card-text">
+                Written by <a href="/posts/{{author}}">{{author}} </a>, on {{published}}
+            </div>
+        </div>
+    </div>
+    {{/entries}} {{^entries}} No entries yet :-(. {{/entries}}
+</body>
+
+</html>

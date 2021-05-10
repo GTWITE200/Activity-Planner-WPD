@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+{{> partials/header}}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  {{^user}}
+  <a id="login" href="/login" class="btn btn-primary">Sign in</a>
+   <a id="register" href="/register" class="btn btn-primary">Register</a> 
+{{/user}}
+{{#user}}
+   <a id="logout" href="/logout" class="btn btn-primary">Sign out</a> 
+ {{/user}}
+  <a href="/new" class="btn btn-primary">Edit Activity Planner</a>
+  <a href="/calculator" class="btn btn-primary">Calories Calculator</a>
+   <a href="/activity_calendar" class="btn btn-primary">Fitness Calendar</a>
+   <a href="/about" class="btn btn-primary">About</a>
+</div>
+
+
+<div class="main">
+  <h2>Activity Planner</h2>
+  <p>Welcome to the Activity Planner where you can do multiple things in relation to your fitness and wellbeing</p>
+  <p>Functional fitness apps occupy firm position among top fitness trends. Why so? Healthy lifestyle has long become a trend, which is about to expand and strengthen its position in the nearest future. More and more people choose wellness, thus turning to fitness industry.</p>
+  <p>Physical activity or exercise can improve your health and reduce the risk of developing several diseases like type 2 diabetes, cancer and cardiovascular disease. Physical activity and exercise can have immediate and long-term health benefits. Most importantly, regular activity can improve your quality of life.</p>
+  <p>Aerobic activity. Get at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous aerobic activity a week, or a combination of moderate and vigorous activity. The guidelines suggest that you spread out this exercise during the course of a week. Greater amounts of exercise will provide even greater health benefit. But even small amounts of physical activity are helpful. Being active for short periods of time throughout the day can add up to provide health benefit</p>
+  <p>Do strength training exercises for all major muscle groups at least two times a week. Aim to do a single set of each exercise, using a weight or resistance level heavy enough to tire your muscles after about 12 to 15 repetitions.</p>
+
+
+</div>
+
+
+  <body class="main">
+     {{#entries}}
+    <div class="card" data-id="{{id}}">
+        <div class="card-header">
+            {{subject}}
+        </div>
+       <div class="card-body">
+            <div class="card-text">
+                {{contents}}
+            </div>
+            <div class="card-text">
+                Written by <a href="/posts/{{author}}">{{author}} </a>, on {{published}}
+            </div>
+        </div>
+    </div>
+    {{/entries}} {{^entries}} No entries yet :-(. {{/entries}}
+</body>
+
+
+
+    
+</body>
+</html> 
