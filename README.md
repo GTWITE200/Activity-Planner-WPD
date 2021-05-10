@@ -1,9 +1,9 @@
 # Activity-Planner-WPD
 Installation & Usage
- npm init
- npm install nedb
- npm install express
- npm install mustache-express
+ -npm init
+ -npm install nedb
+- npm install express
+-npm install mustache-express
 
 This web application is a fitness and wellbeing application. Fitness application that’s used to keep track of your physical fitness data, daily calorie count, invite 
 friends to work out together and ultimately get healthy.
